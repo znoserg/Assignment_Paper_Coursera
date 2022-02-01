@@ -36,6 +36,56 @@
     unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
+/* latin-ext */
+@font-face {
+    font-family: 'Racing Sans One';
+    font-style: normal;
+    font-weight: 400;
+    src: url(https://fonts.gstatic.com/s/racingsansone/v11/sykr-yRtm7EvTrXNxkv5jfKKyDCAJnDnapI.woff2) format('woff2');
+    unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+    font-family: 'Racing Sans One';
+    font-style: normal;
+    font-weight: 400;
+    src: url(https://fonts.gstatic.com/s/racingsansone/v11/sykr-yRtm7EvTrXNxkv5jfKKyDCAKHDn.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* gujarati */
+@font-face {
+    font-family: 'Farsan';
+    font-style: normal;
+    font-weight: 400;
+    src: url(https://fonts.gstatic.com/s/farsan/v16/VEMwRoJ0vY_zsyzKxqWo9DU.woff2) format('woff2');
+    unicode-range: U+0964-0965, U+0A80-0AFF, U+200C-200D, U+20B9, U+25CC, U+A830-A839;
+}
+/* vietnamese */
+@font-face {
+    font-family: 'Farsan';
+    font-style: normal;
+    font-weight: 400;
+    src: url(https://fonts.gstatic.com/s/farsan/v16/VEMwRoJ0vY_zsyzK0qWo9DU.woff2) format('woff2');
+    unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+    font-family: 'Farsan';
+    font-style: normal;
+    font-weight: 400;
+    src: url(https://fonts.gstatic.com/s/farsan/v16/VEMwRoJ0vY_zsyzK06Wo9DU.woff2) format('woff2');
+    unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+    font-family: 'Farsan';
+    font-style: normal;
+    font-weight: 400;
+    src: url(https://fonts.gstatic.com/s/farsan/v16/VEMwRoJ0vY_zsyzK3aWo.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+
 body
 {
     width: 1200px;
@@ -172,6 +222,7 @@ body
     font-weight: bold;
     text-align: center;
     font-size: 0.8em;
+    column-span: all;
 }
 /*----------Ссылки продолжения страницы---------*/
 .article__continue
@@ -179,7 +230,8 @@ body
     display: block;
     font-size: 0.8em;
     font-style: italic;
-    text-align: justify;
+    text-align: center;
+    column-span: all;
 }
 
 .article__image
@@ -218,11 +270,13 @@ body
 .main-photo__title
 {
     margin: 0;
+    font-weight: bold;
 }
 
 .main-photo__desc
 {
     margin-bottom: 20px;
+    font-size: 0.8em;
 }
 
 /*––––––––––––––––––Линия разделения––––––––––––––––*/
@@ -242,9 +296,27 @@ body
 {
     width: 70px;
     margin: 0 auto;
+    column-span: all;
+}
+
+/*------------------Абзацы в основной части статьи--------------*/
+main p
+{
+    text-indent: 2ch;
+    text-align: justify;
+    font-size: 0.8em;
 }
 
 /*––––––––––––––––––Центральные колонки газеты––––––––––––––––––*/
+/*-----------------Первый подзаголовок---------------------*/
+.article__title_font_racing
+{
+    font-family: 'Racing Sans One';
+    font-style: italic;
+    font-weight: bold;
+    font-size: 2em;
+    column-span: all;
+}
 .multicolumn
 {
     margin-top: 10px;
@@ -267,6 +339,14 @@ body
     padding-left: 10px;
 }
 
+/*--------------------Заголовок правой мультиколонки-------------*/
+.article__title_font_farsan {
+    font-family: 'Farsan';
+    font-style: italic;
+    font-size: 2.3em;
+    font-weight: bold;
+    column-span: all;
+}
 .multicolumn__left
 {
     padding-right: 10px;
@@ -285,6 +365,7 @@ body
     margin: 10px 0 0 0;
 }
 
+
 .center-column
 {
     margin-top: 20px;
@@ -292,7 +373,12 @@ body
 
     flex-grow: 2;
 }
-
+/*-----------Деление на две колонки центральной части (мультиколонки)-----------*/
+.article_columns_two
+{
+    column-count: 2;
+    column-gap: 15px;
+}
 /*––––––––––––––––––Второстепенные колонки газеты––––––––––––––––––*/
 .left-column
 {
@@ -314,11 +400,13 @@ body
 
     flex-shrink: 0;
 }
-/*------------------Абзацы в основной части статьи--------------*/
-main p
+
+/*------------------Главное фото---------------------*/
+.main-photo__caption
 {
-    text-indent: 2ch;
-    text-align: justify;
-    font-size: 0.8em;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    text-align: right;
 }
+
 /*––––––––––––––––––––––––––––––––––––––––––––––––––*/
